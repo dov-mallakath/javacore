@@ -19,11 +19,12 @@ public class Calculator {
         int substract = numberOne - numberTwo;
         return substract;
     }
-/*
-    public int power(int numberOne, int numberTwo) {
-        int power = numberOne - numberTwo;
 
+    public int power(int numberOne, int numberTwo) {
+        int power=1;
+        for(int iterator=1; iterator<=numberTwo; iterator++){
+            power *= numberOne;
+        }
         return power;
     }
-  */
 }

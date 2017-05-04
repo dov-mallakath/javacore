@@ -10,20 +10,20 @@ import org.junit.Test;
  */
 public class CalculatorTest {
 
-    private int testNumberOne = 3;
-    private int testNumberTwo = 2;
+    private int testNumberOne = 4;
+    private int testNumberTwo = 3;
     private Calculator calculator = new Calculator();
 
     @Test
     public void sumTest() {
-        int expectedResult = 5;
+        int expectedResult = 7;
         int actualResult = calculator.sum(testNumberOne,testNumberTwo);
         Assert.assertEquals(expectedResult,actualResult);
     }
 
     @Test
     public void multiplyTest() {
-        int expectedResult = 6;
+        int expectedResult = 12;
         int actualResult = calculator.multiply(testNumberOne,testNumberTwo);
         Assert.assertEquals(expectedResult,actualResult);
     }
@@ -35,6 +35,11 @@ public class CalculatorTest {
         Assert.assertEquals(expectedResult,actualResult);
     }
 
-
+    @Test
+    public void powerTest() {
+        int expectedResult = 64;
+        int actualResult = calculator.power(testNumberOne,testNumberTwo);
+        Assert.assertEquals(expectedResult,actualResult);
+    }
 
 }

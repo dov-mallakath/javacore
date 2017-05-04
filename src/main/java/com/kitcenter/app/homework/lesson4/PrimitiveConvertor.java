@@ -7,25 +7,25 @@ package com.kitcenter.app.homework.lesson4;
 public class PrimitiveConvertor {
     private char charVar;
 
-    public void floatToChar(float floatVar) {
+    public char floatToChar(float floatVar) {
         charVar = (char)floatVar;
-        //return this.charVar;
         System.out.println("Incomming float: "+floatVar);
         System.out.println("Resulting char: "+charVar);
+        return charVar;
     }
 
-    public void intToChar(int intVar) {
+    public char intToChar(int intVar) {
         charVar = (char)intVar;
-        //return this.charVar;
         System.out.println("Incomming int: "+intVar);
         System.out.println("Resulting char: "+charVar);
+        return charVar;
     }
 
-    public void chartoInt(char charVar) {
+    public int charToInt(char charVar) {
         int intVar = (int)charVar;
-        //return this.charVar;
-        System.out.println("Incomming int: "+charVar);
-        System.out.println("Resulting char: "+intVar);
+        System.out.println("Incomming char: "+charVar);
+        System.out.println("Resulting int: "+intVar);
+        return intVar;
     }
 
 }
