@@ -1,8 +1,7 @@
 package com.kitcenter.classwork.lesson5;
 
 import com.kitcenter.app.classwork.lesson5.Calculator;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 
 /**
  * @author Denys Ovcharuk (DOV) / WorldTicket A/S
@@ -10,9 +9,34 @@ import org.junit.Test;
  */
 public class CalculatorTest {
 
-    private int testNumberOne = 4;
-    private int testNumberTwo = 3;
-    private Calculator calculator = new Calculator();
+    int testNumberOne, testNumberTwo;
+    Calculator calculator = new Calculator();;
+
+
+    /**
+     * Why this should be static???
+     * Initializing something for testing Calculator class
+     */
+    @BeforeClass
+    public static void setUpBeforeClass() {
+
+    }
+
+    @Before
+    public void setUp() {
+        testNumberOne = 4;
+        testNumberTwo = 3;
+    }
+
+    @After
+    public void tearDown() {
+        System.out.println("Test is either failed or passed");
+    }
+
+    @AfterClass
+    public static void tearDownForClass() {
+        System.out.println("Test execution completed");
+    }
 
     @Test
     public void sumTest() {
