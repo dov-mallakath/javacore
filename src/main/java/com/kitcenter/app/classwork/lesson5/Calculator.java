@@ -20,7 +20,7 @@ public class Calculator {
         return substract;
     }
 
-    public int power(int numberOne, int numberTwo) {
+    public int power(double numberOne, int numberTwo) {
         int power=1;
         for(int iterator=1; iterator<=numberTwo; iterator++){
             power *= numberOne;
