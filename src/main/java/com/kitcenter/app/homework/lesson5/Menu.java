@@ -11,7 +11,7 @@ import java.io.*;
  */
 public class Menu {
     private static List<String> menuItem = Arrays.asList(
-            "Check if three numbers could be sizes of ides of right angled triangle",
+            "Check if three numbers could be sizes of sides of right angled triangle",
             "Check if a number is even or odd",
             "Compare two numbers");
 
@@ -47,7 +47,8 @@ public class Menu {
 
     private String getNextCommand(){
         Scanner scanner = new Scanner(System.in);
-        return scanner.next();
+        //return scanner.next();
+        return scanner.nextLine();
     }
 
     private void commandParser(){
@@ -71,6 +72,7 @@ public class Menu {
                     break;
                 default:
                     System.out.println("Invalid command, please try again...");
+                    break;
             }
         }
 

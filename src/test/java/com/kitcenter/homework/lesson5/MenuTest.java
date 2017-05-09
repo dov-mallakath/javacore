@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.io.PrintStream;
 
 /**
@@ -18,7 +17,31 @@ import java.io.PrintStream;
 public class MenuTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
-    private void emulateUserInput(String value){
+//    class EmulateUser extends Thread{
+//        @Override
+//        public void run()
+//        {
+//            for(int i = 0; i < 5; i++)
+//            {
+//                try{
+//                    sleep(1000);
+//                }catch(InterruptedException e){}
+//
+//                System.out.println("test");
+//                emulateUserInput("quit");
+//                try {
+//                    user.join();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                this.yield();
+//            }
+//        }
+//    }
+//
+//    EmulateUser user;
+
+    private synchronized void emulateUserInput(String value){
         System.setIn(new ByteArrayInputStream(value.getBytes()));
     }
 
@@ -38,7 +61,7 @@ public class MenuTest {
         String expectedOutput = "\nMenu:\n" +
                 "Select what class U wish to execute by entering it's list number (e.g. \"2\") and pressing \"enter\"\n" +
                 "(To exit program type \"quit\" and press \"enter\")\n" +
-                "1: Check if three numbers could be sizes of ides of right angled triangle\n" +
+                "1: Check if three numbers could be sizes of sides of right angled triangle\n" +
                 "2: Check if a number is even or odd\n" +
                 "3: Compare two numbers\n" +
                 "Bye!\n";
@@ -47,4 +70,21 @@ public class MenuTest {
         String resultOutput = outContent.toString();
         Assert.assertEquals(expectedOutput,resultOutput);
     }
+
+//    @Test
+//    public void menuTestRunOne(){
+//        user = new EmulateUser();
+//        String expectedOutput = "\nMenu:\n" +
+//                "Select what class U wish to execute by entering it's list number (e.g. \"2\") and pressing \"enter\"\n" +
+//                "(To exit program type \"quit\" and press \"enter\")\n" +
+//                "1: Check if three numbers could be sizes of sides of right angled triangle\n" +
+//                "2: Check if a number is even or odd\n" +
+//                "3: Compare two numbers\n" +
+//                "1 Please enter variable value (e.g. '2' or '3,46'): \n";
+//        //emulateUserInput("test");
+//        user.start();
+//        new Menu();
+//        String resultOutput = outContent.toString();
+//        Assert.assertEquals(expectedOutput,resultOutput);
+//    }
 }

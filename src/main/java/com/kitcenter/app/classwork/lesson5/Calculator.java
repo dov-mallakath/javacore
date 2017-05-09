@@ -25,6 +25,7 @@ public class Calculator {
         for(int iterator=1; iterator<=numberTwo; iterator++){
             power *= numberOne;
         }
+        power = numberTwo < 0 ? 1/power : power;
         return power;
     }
 }
