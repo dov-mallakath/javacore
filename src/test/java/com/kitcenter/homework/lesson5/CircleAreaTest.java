@@ -19,10 +19,18 @@ public class CircleAreaTest {
     }
 
     @Test
-    public void calculateBiggerTest(){
+    public void positiveCalculateBiggerTest(){
         double radiusOne = 4;
         double radiusTwo = 3;
         boolean result = CircleArea.calculateBigger(radiusOne,radiusTwo);
         Assert.assertTrue(result);
+    }
+
+    @Test
+    public void negativeCalculateBiggerTest(){
+        double radiusOne = 3;
+        double radiusTwo = 4;
+        boolean result = CircleArea.calculateBigger(radiusOne,radiusTwo);
+        Assert.assertFalse(result);
     }
 }

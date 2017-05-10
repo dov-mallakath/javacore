@@ -45,11 +45,11 @@ public class CircleArea {
     public static boolean calculateBigger(double radiusOne, double radiusTwo){
         double areaOne = calculate(radiusOne);
         double areaTwo = calculate(radiusTwo);
-        if (areaOne>areaTwo)
-            {System.out.println("Area one is bigger");
+        if ((radiusOne>radiusTwo)||(areaOne>areaTwo))
+            {System.out.println("Area one is bigger then Area two");
             return true;
         } else {
-            System.out.println("Area two is bigger");
+            System.out.println("Area two is bigger then Area one");
             return false;
         }
 

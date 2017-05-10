@@ -16,6 +16,7 @@ import java.io.PrintStream;
  */
 public class MenuTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private Menu menu = new Menu();
 
 //    class EmulateUser extends Thread{
 //        @Override
@@ -41,7 +42,7 @@ public class MenuTest {
 //
 //    EmulateUser user;
 
-    private synchronized void emulateUserInput(String value){
+    private void emulateUserInput(String value){
         System.setIn(new ByteArrayInputStream(value.getBytes()));
     }
 
@@ -66,14 +67,14 @@ public class MenuTest {
                 "3: Compare two numbers\n" +
                 "Bye!\n";
         emulateUserInput("quit");
-        new Menu();
+        menu.commandParser();
         String resultOutput = outContent.toString();
         Assert.assertEquals(expectedOutput,resultOutput);
     }
 
 //    @Test
 //    public void menuTestRunOne(){
-//        user = new EmulateUser();
+//        //user = new EmulateUser();
 //        String expectedOutput = "\nMenu:\n" +
 //                "Select what class U wish to execute by entering it's list number (e.g. \"2\") and pressing \"enter\"\n" +
 //                "(To exit program type \"quit\" and press \"enter\")\n" +
@@ -82,7 +83,10 @@ public class MenuTest {
 //                "3: Compare two numbers\n" +
 //                "1 Please enter variable value (e.g. '2' or '3,46'): \n";
 //        //emulateUserInput("test");
-//        user.start();
+//        //user.start();
+//        emulateUserInput("test" + System.lineSeparator() + "quit" + System.lineSeparator());
+//        String value = "test" + System.lineSeparator() + "quit" + System.lineSeparator();
+//        System.setIn(new ByteArrayInputStream(value.getBytes()));
 //        new Menu();
 //        String resultOutput = outContent.toString();
 //        Assert.assertEquals(expectedOutput,resultOutput);

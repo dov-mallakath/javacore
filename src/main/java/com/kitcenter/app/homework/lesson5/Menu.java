@@ -15,10 +15,6 @@ public class Menu {
             "Check if a number is even or odd",
             "Compare two numbers");
 
-    public Menu(){
-        commandParser();
-    }
-
     private void displayMenu(){
         System.out.println();
         System.out.println("Menu:");
@@ -51,7 +47,7 @@ public class Menu {
         return scanner.nextLine();
     }
 
-    private void commandParser(){
+    public void commandParser(){
         boolean quit = false;
         while (!quit) {
             displayMenu();

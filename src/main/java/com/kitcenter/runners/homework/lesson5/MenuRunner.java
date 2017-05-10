@@ -8,6 +8,7 @@ import com.kitcenter.app.homework.lesson5.Menu;
  */
 public class MenuRunner {
     public static void main(String[] args) {
-        new Menu();
+        Menu menu = new Menu();
+        menu.commandParser();
     }
 }

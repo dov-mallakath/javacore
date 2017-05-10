@@ -2,11 +2,13 @@ package com.kitcenter.classwork.lesson5;
 
 import com.kitcenter.app.classwork.lesson5.Calculator;
 import org.junit.*;
+import org.junit.runners.MethodSorters;
 
 /**
  * @author Denys Ovcharuk (DOV) / WorldTicket A/S
  * @since 2017-05-03
  */
+@FixMethodOrder(MethodSorters.JVM)
 public class CalculatorTest {
 
     int testNumberOne, testNumberTwo;
@@ -50,6 +52,12 @@ public class CalculatorTest {
         int expectedResult = -7;
         int actualResult = calculator.sum(testNumberOne*-1,testNumberTwo*-1);
         Assert.assertEquals(expectedResult,actualResult);
+    }
+
+    @Ignore
+    @Test(timeout = 1000)
+    public void infinityTest(){
+    while (true);
     }
 
     @Test
