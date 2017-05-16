@@ -1,0 +1,6 @@
+variableOne,variableTwo,expectedResult
+0,5,5
+-2,2,0
+-5,4,-1
+1,2,3
+-2,3,1

@@ -9,9 +9,8 @@ public class CountEvenNumbersInRange {
     public int countEvenNumbersInRange(int startRange, int endRange){
         int evenNumbersQuantity=0;
         for (int iterator=startRange; iterator<=endRange; iterator++){
-            if (iterator%2==0) {evenNumbersQuantity++;}
+            if (iterator%2==0&&iterator!=0) {evenNumbersQuantity++;}
         }
-
         return evenNumbersQuantity;
     }
 }

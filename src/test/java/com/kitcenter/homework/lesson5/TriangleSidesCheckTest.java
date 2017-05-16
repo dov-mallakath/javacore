@@ -1,18 +1,25 @@
 package com.kitcenter.homework.lesson5;
 
 import com.kitcenter.app.homework.lesson5.TriangleSidesCheck;
+import junitparams.FileParameters;
+import junitparams.JUnitParamsRunner;
+import junitparams.mappers.CsvWithHeaderMapper;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Denys Ovcharuk (DOV) / WorldTicket A/S
  * @since 2017-05-08
  */
+@RunWith(JUnitParamsRunner.class)
 public class TriangleSidesCheckTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private TriangleSidesCheck triangleSidesCheck = new TriangleSidesCheck();
@@ -34,20 +41,27 @@ public class TriangleSidesCheckTest {
     }
 
     @Test
-    public void checkDataToBeTriangleSidesPositiveTest(){
-        boolean resultOne = triangleSidesCheck.checkDataToBeTriangleSides(validInputDataOne);
-        boolean resultTwo = triangleSidesCheck.checkDataToBeTriangleSides(validInputDataTwo);
-        boolean resultThree = triangleSidesCheck.checkDataToBeTriangleSides(validInputDataThree);
-        Assert.assertTrue(resultOne);
-        Assert.assertTrue(resultTwo);
-        Assert.assertTrue(resultThree);
+    @FileParameters(value = "src/test/resources/TriangleSidesCheckTest.csv",
+            mapper = CsvWithHeaderMapper.class)
+    public void checkDataToBeTriangleSidesTest(double sideOne, double sideTwo, double sideThree, double sideFour, Boolean expectedResult){
+        List<Double> validInputDataList = new ArrayList<Double>();
+        if (sideFour==0) {validInputDataList.add(sideOne); validInputDataList.add(sideTwo);validInputDataList.add(sideThree);}
+        else {validInputDataList.add(sideOne); validInputDataList.add(sideTwo);validInputDataList.add(sideThree);validInputDataList.add(sideThree);}
+        double [] validInputData = new double[validInputDataList.size()];
+        for(int iterator=0; iterator<validInputDataList.size();iterator++){
+            validInputData[iterator]=validInputDataList.get(iterator);
+        }
+        boolean result = triangleSidesCheck.checkDataToBeTriangleSides(validInputData);
+        Assert.assertEquals(expectedResult,result);
     }
 
+    @Deprecated
     @Test
     public void checkDataToBeTriangleSidesNegativeTest(){
         boolean result = triangleSidesCheck.checkDataToBeTriangleSides(invalidInputDataOne);
         Assert.assertFalse(result);
     }
+
 
     @Test
     public void triangleSidesCheckPositiveTest(){
