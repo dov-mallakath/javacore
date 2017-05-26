@@ -37,10 +37,68 @@ public class ArrayUtil {
         }
     }
 
-    public void print(int[] multyArray){
+    public void printAlignRight(int[][] multyArray){
+        int maxShift = maxShift(multyArray);
         for (int i=0; i<multyArray.length; i++){
-                System.out.print(multyArray[i]+" ");
+            for (int c=0; c<multyArray[i].length; c++){
+                System.out.print(buildShift(multyArray[i][c],maxShift)+multyArray[i][c]+" ");
             }
             System.out.println();
         }
+    }
+
+    private int maxShift(int[][] multyArray){
+        int max=multyArray[0][0];
+        for(int i=0; i<multyArray.length; i++){
+            if(getMax(multyArray[i])>=max){max=getMax(multyArray[i]);}
+        }
+        int length = String.valueOf(max).length();
+        return length-1;
+    }
+
+    private String buildShift(int element, int maxShift){
+        String shift = "";
+        int elementLength = String.valueOf(element).length();
+        for(int i=0; i<=maxShift-elementLength; i++){
+            shift = shift + " ";
+        }
+        return shift;
+    }
+
+    public void print(int[] multyArray, String separator){
+        for (int i=0; i<multyArray.length; i++){
+                System.out.print(multyArray[i]+separator);
+            }
+            System.out.println();
+        }
+
+    public void printReverse(int[] multyArray, String separator){
+        for (int i=multyArray.length-1; i>=0; i--){
+            System.out.print(multyArray[i]+separator);
+        }
+        System.out.println();
+    }
+
+    public void print(int[] multyArray){
+        for (int i=0; i<multyArray.length; i++){
+            System.out.print(multyArray[i]);
+        }
+        System.out.println();
+    }
+
+    public int getMax(int[] array){
+        int max = array[0];
+        for(int i=1; i<array.length; i++){
+            if(array[i]>=max){max=array[i];}
+        }
+        return max;
+    }
+
+    public int getMin(int[] array){
+        int min = array[0];
+        for(int i=1; i<array.length; i++){
+            if(array[i]<=min){min=array[i];}
+        }
+        return min;
+    }
 }

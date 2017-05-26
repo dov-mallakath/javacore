@@ -13,4 +13,14 @@ public class CountEvenNumbersInRange {
         }
         return evenNumbersQuantity;
     }
+
+    public boolean isEven(int number){
+        boolean result = (number%2==0&&number!=0)?true:false;
+        return result;
+    }
+
+    public int getNextEven(int number){
+        int nextEven = (isEven(number))? number+2 : number+1;
+        return nextEven;
+    }
 }
