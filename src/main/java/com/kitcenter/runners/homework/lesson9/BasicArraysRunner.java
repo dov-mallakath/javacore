@@ -1,11 +1,7 @@
 package com.kitcenter.runners.homework.lesson9;
 
 import com.kitcenter.app.classwork.lesson8.ArrayUtil;
-import com.kitcenter.app.homework.lesson5.UserInputData;
 import com.kitcenter.app.homework.lesson9.ArrayGenerator;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
