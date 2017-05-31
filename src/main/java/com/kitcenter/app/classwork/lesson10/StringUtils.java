@@ -24,4 +24,17 @@ public class StringUtils {
         }
         return isPalindrome;
     }
+
+    public boolean isPalindromeSuperFast(String input){
+        StringBuilder builder = new StringBuilder(input);
+        boolean isPalindrome=true;
+        int length = input.length()-1;
+        for(int i=0; i<input.length()/2; i++){
+            if(input.charAt(i)!=input.charAt(length-i)){
+                isPalindrome=false;
+                break;
+            }
+        }
+        return isPalindrome;
+    }
 }

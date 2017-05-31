@@ -76,8 +76,28 @@ public class Lesson10Runner {
 
         Scanner scanner = new Scanner(System.in);
         String input = scanner.next();
+
+
+        StringBuilder builder = new StringBuilder("sks");
+        String c = "sks";
+        for(long ii=0; ii<100000L; ii++) {
+            builder = builder.append(c);
+        }
+        input=builder.toString();
+        long start = System.currentTimeMillis();
         System.out.println(stringUtils.isPalindrome(input));
+        long end = System.currentTimeMillis();
+        System.out.println(end-start);
+
+        start = System.currentTimeMillis();
         System.out.println(stringUtils.isPalindromeFast(input));
+        end = System.currentTimeMillis();
+        System.out.println(end-start);
+
+        start = System.currentTimeMillis();
+        System.out.println(stringUtils.isPalindromeSuperFast(input));
+        end = System.currentTimeMillis();
+        System.out.println(end-start);
 
         int counter = 5;
         Integer autoBoxingLiteral = counter;
