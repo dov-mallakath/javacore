@@ -1,4 +1,4 @@
-package com.kitcenter.runners.lesson11;
+package com.kitcenter.runners.classwork.lesson11;
 
 import com.kitcenter.app.classwork.lesson11.EnigmaEncoder;
 
@@ -33,10 +33,11 @@ public class Lesson11Runner {
         System.out.println(end-start);
 
 
-        EnigmaEncoder enigmaEncoder = new EnigmaEncoder();
         Scanner scanner = new Scanner(System.in);
         String input = scanner.next();
-        System.out.println(enigmaEncoder.encodeString(input));
+        String encoded = EnigmaEncoder.encodeString(input);
+        System.out.println(encoded);
+        System.out.println(EnigmaEncoder.decodeString(encoded));
 
     }
 }

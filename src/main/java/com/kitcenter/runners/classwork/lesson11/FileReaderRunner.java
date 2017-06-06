@@ -1,4 +1,4 @@
-package com.kitcenter.runners.lesson11;
+package com.kitcenter.runners.classwork.lesson11;
 
 import com.kitcenter.app.classwork.lesson11.FileReaderNew;
 
