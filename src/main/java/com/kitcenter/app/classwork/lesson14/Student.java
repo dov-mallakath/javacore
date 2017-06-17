@@ -18,7 +18,17 @@ public class Student extends Person {
         this.univercity = university;
     }
 
+    @Override
     public String getResponse(String question) {
         return response;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", univercity='" + univercity + '\'' +
+                ", response='" + response + '\'' +
+                '}';
     }
 }

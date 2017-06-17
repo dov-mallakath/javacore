@@ -24,4 +24,8 @@ public class Person {
     public int getAge() {
         return age;
     }
+
+    public String getResponse(String question){
+        return "My answer is " + question;
+    }
 }

@@ -34,6 +34,13 @@ public class ArrayParser extends ArrayUtil {
         return input;
     }
 
+    public String getUserArrayInput(String userArray){
+        String input = userArray.replaceAll("\n","");
+        setArrayType(input);
+        System.out.println(arrayType);
+        return input;
+    }
+
     private void setArrayType(String input){
         arrayType = RANDOM;
         if(isChar(input)){arrayType = CHARACTER;}
@@ -84,10 +91,30 @@ public class ArrayParser extends ArrayUtil {
         }
     }
 
+    public void setSeparator(String separator){
+        String input = separator;
+        String illegalSeparators = "{}[]\\,.\"\'";
+        if (!illegalSeparators.contains(input)&&input.length()>0) {
+            this.separator = input;
+            System.out.println("Separator is set to " + input);
+        } else {
+            System.out.println("Only char may be separator. Setting to deafult \";\"");
+        }
+    }
+
     public void setSorting(){
         System.out.println("Enter the desired sorting direction (ASC for ASCENDING and DSC for DESCENDING; default is ASC):");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
+        switch (input){
+            case "DSC": {sortingDirection = DESCENDING;break;}
+            default: sortingDirection = ASCENDING;
+        }
+        System.out.println("Sorting direction is set to " + sortingDirection);
+    }
+
+    public void setSorting(String sorting){
+        String input = sorting;
         switch (input){
             case "DSC": {sortingDirection = DESCENDING;break;}
             default: sortingDirection = ASCENDING;

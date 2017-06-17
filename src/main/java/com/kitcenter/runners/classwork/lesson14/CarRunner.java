@@ -17,5 +17,9 @@ public class CarRunner {
         bmw.printNameAndSpeed();
         lexus.drives();
         bmw.drives();
+
+        System.out.println(lexus.equals(bmw));
+        bmw.setSpeed(lexus.getSpeed());
+        System.out.println(lexus.equals(bmw));
     }
 }

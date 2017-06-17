@@ -21,6 +21,10 @@ public class Car {
         return speed;
     }
 
+    public void setSpeed(int speed){
+        this.speed = speed;
+    }
+
     public void printNameAndSpeed(){
         System.out.println(getClassName()+" Model name is:"+getName()+"; Speed is: "+getSpeed());
     }
@@ -33,4 +37,18 @@ public class Car {
         System.out.println("This is a " + getClassName() + " car with basic engine");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car)) return false;
+
+        Car car = (Car) o;
+
+        return getSpeed() == car.getSpeed();
+    }
+
+    @Override
+    public int hashCode() {
+        return getSpeed();
+    }
 }
