@@ -30,6 +30,19 @@ public enum Holidays {
         return name;
     }
 
+
+    public void setDate(int date) {
+        this.date = date;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString(){
         return getName() + " holiday is usually celebrated on " + getMonth() +", " + getDate();

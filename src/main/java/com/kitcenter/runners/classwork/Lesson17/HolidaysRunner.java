@@ -12,6 +12,15 @@ public class HolidaysRunner {
         for (Holidays holiday: Holidays.values()) {
             System.out.println(holiday);
         }
+
+        Holidays holidays = Holidays.CHRISTMAS;
+        holidays.setDate(27);
+        holidays.setMonth("December");
+        System.out.println(holidays);
+
+        for (Holidays holiday: Holidays.values()) {
+            System.out.println(holiday);
+        }
     }
 
 }
