@@ -51,4 +51,12 @@ public class Car {
     public int hashCode() {
         return getSpeed();
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", speed=" + speed +
+                '}';
+    }
 }
