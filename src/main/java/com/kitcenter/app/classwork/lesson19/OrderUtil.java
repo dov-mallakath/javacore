@@ -12,10 +12,6 @@ public class OrderUtil {
         return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
     }
 
-//    public static <K, V> boolean compare(OrderPair<K, V> p1, OrderPair<K, V> p2){
-//        return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
-//    }
-
     public static <K> boolean compare(BoxPrinterGeneric<K> bpg1, BoxPrinterGeneric<K> bpg2){
         return bpg1.getVal().equals(bpg2.getVal());
     }
