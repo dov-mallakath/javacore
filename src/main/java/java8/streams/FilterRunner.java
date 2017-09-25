@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import static java.time.Month.JULY;
 import static java8.streams.employee.Employee.persons;
@@ -58,6 +59,8 @@ public class FilterRunner {
         Optional<Double> salaryAllThree = persons().stream().map(Employee::getIncome).reduce(Double::sum);
         salaryAllThree.ifPresent(System.out::println);
 
+        List<Employee> filteredList = persons()
+                .stream().filter(employeePredicate).collect(Collectors.toList());
 
     }
 
